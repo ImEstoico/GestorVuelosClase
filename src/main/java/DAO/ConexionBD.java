@@ -10,7 +10,7 @@ public class ConexionBD {
     private static final String HOST = "localhost:3306";
     private static final String DB_NAME = "app_flights";
     private static final String USUARIO = "root";
-    private static final String PASSWORD = "MySQL24-25";
+    private static final String PASSWORD = "mentefria11";
 
     // URL completa
     private static final String URL = "jdbc:mysql://" + HOST + "/" + DB_NAME;

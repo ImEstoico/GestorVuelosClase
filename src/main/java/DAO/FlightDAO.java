@@ -78,22 +78,21 @@ public class FlightDAO {
     public boolean insertar(Flight f) {
 
         String sql = """
-                INSERT INTO flight(id_flight,num_flight, destination, departure, duration)
-                VALUES (?,?,?,?,?)
-                """;
+            INSERT INTO flight(num_flight, destination, departure, duration)
+            VALUES (?,?,?,?)
+            """;
 
         try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 
-
-            pstmt.setInt(1, f.getIdFlight());
-            pstmt.setString(2, f.getNumFlight());
-            pstmt.setString(3, f.getDestination());
-            pstmt.setDate(4, Date.valueOf(f.getDeparture()));
-            pstmt.setInt(5, f.getDuration());
+            pstmt.setString(1, f.getNumFlight());
+            pstmt.setString(2, f.getDestination());
+            pstmt.setDate(3, Date.valueOf(f.getDeparture()));
+            pstmt.setInt(4, f.getDuration());
 
             return pstmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
+
             System.out.println("Error insertar flight: " + e.getMessage());
             return false;
         }
