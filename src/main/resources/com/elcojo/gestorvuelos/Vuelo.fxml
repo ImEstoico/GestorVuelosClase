@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="631.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elcojo.gestorvuelos.VueloController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <!-- ================= TITULO ================= -->
+
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Gestión de Vuelos" />
+
+    <!-- ================= FORMULARIO ================= -->
+
+    <TextField fx:id="txtNum" promptText="Número de vuelo" />
+
+    <TextField fx:id="txtDestino" promptText="Destino" />
+
+    <DatePicker fx:id="dateSalida" />
+
+    <TextField fx:id="txtDuracion" promptText="Duración (minutos)" />
+
+    <!-- ================= BOTONES CRUD ================= -->
+
+    <HBox alignment="CENTER" spacing="10">
+
+        <Button onAction="#onAdd" text="Añadir" />
+
+        <Button onAction="#onDelete" text="Eliminar" />
+      <Button onAction="#onActualizar" text="Actualizar" />
+
+    </HBox>
+
+    <!-- ================= FILTROS ================= -->
+
+    <HBox alignment="CENTER" spacing="10">
+
+        <ComboBox fx:id="cmbFiltro" prefWidth="150" promptText="Selecciona Filtro" />
+
+        <TextField fx:id="txtFiltroDestino" promptText="Destino filtro" />
+
+        <Button onAction="#onFilter" text="Filtrar" />
+
+    </HBox>
+
+    <!-- ================= TABLA ================= -->
+
+    <TableView fx:id="tabla" prefHeight="250.0" prefWidth="550.0">
+
+        <columns>
+
+            <TableColumn fx:id="colNum" prefWidth="120" text="Vuelo" />
+
+            <TableColumn fx:id="colDestino" prefWidth="120" text="Destino" />
+
+            <TableColumn fx:id="colFecha" prefWidth="150" text="Fecha" />
+
+            <TableColumn fx:id="colDuracion" prefWidth="120" text="Duración" />
+
+        </columns>
+
+    </TableView>
+
+</VBox>
