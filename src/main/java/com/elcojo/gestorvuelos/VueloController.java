@@ -14,9 +14,7 @@ import java.util.Optional;
 
 public class VueloController {
 
-    // =========================
-    // FORMULARIO
-    // =========================
+
 
     @FXML
     private TextField txtId;
@@ -33,9 +31,6 @@ public class VueloController {
     @FXML
     private TextField txtDuracion;
 
-    // =========================
-    // FILTROS
-    // =========================
 
     @FXML
     private ComboBox<String> cmbFiltro;
@@ -43,9 +38,7 @@ public class VueloController {
     @FXML
     private TextField txtFiltroDestino;
 
-    // =========================
-    // TABLA
-    // =========================
+
 
     @FXML
     private TableView<Flight> tabla;
@@ -65,15 +58,9 @@ public class VueloController {
     @FXML
     private TableColumn<Flight, Integer> colDuracion;
 
-    // =========================
-    // DAO
-    // =========================
 
     private FlightDAO dao;
 
-    // =========================
-    // INITIALIZE
-    // =========================
 
     @FXML
     public void initialize() {
@@ -91,6 +78,7 @@ public class VueloController {
             }
 
             cargarTabla();
+
         // CONFIGURAR COLUMNAS
 
         colId.setCellValueFactory(cellData ->
@@ -142,9 +130,9 @@ public class VueloController {
         );
     }
 
-    // =========================
-    // CARGAR TABLA
-    // =========================
+
+    //CARGAR TABLA
+
 
     private void cargarTabla() {
 
@@ -154,9 +142,7 @@ public class VueloController {
         tabla.setItems(lista);
     }
 
-    // =========================
     // CARGAR FORMULARIO
-    // =========================
 
     private void cargarFormulario(Flight f) {
 
@@ -169,9 +155,7 @@ public class VueloController {
         txtDuracion.setText(String.valueOf(f.getDuration()));
     }
 
-    // =========================
     // AÑADIR
-    // =========================
 
     @FXML
     public void onAdd() {
@@ -207,9 +191,7 @@ public class VueloController {
         }
     }
 
-    // =========================
     // ELIMINAR
-    // =========================
 
     @FXML
     public void onDelete() {
@@ -244,9 +226,7 @@ public class VueloController {
         }
     }
 
-    // =========================
     // ACTUALIZAR
-    // =========================
 
     @FXML
     public void onActualizar() {
@@ -282,9 +262,7 @@ public class VueloController {
         }
     }
 
-    // =========================
     // FILTRAR
-    // =========================
 
     @FXML
     public void onFilter() {
@@ -317,9 +295,9 @@ public class VueloController {
         }
     }
 
-    // =========================
+
     // VALIDAR
-    // =========================
+
 
     private boolean validarCampos() {
 
@@ -349,9 +327,9 @@ public class VueloController {
         return true;
     }
 
-    // =========================
+
     // LIMPIAR
-    // =========================
+
 
     private void limpiarFormulario() {
 
@@ -362,9 +340,9 @@ public class VueloController {
         dateSalida.setValue(null);
     }
 
-    // =========================
+
     // ALERT INFO
-    // =========================
+
 
     private void mostrarInfo(String mensaje) {
 
@@ -377,9 +355,12 @@ public class VueloController {
         alert.showAndWait();
     }
 
-    // =========================
+
     // ALERT ERROR
-    // =========================
+
+
+    //esto lo hice para probarlo, no es necesario al 100% para el programa se puede hacer de otra forma,
+    // solo queria experimentar con los alerts
 
     private void mostrarError(String titulo, String mensaje) {
 

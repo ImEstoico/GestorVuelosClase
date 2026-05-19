@@ -4,6 +4,7 @@ module com.elcojo.gestorvuelos {
     requires java.sql;
 
 
+
     opens com.elcojo.gestorvuelos to javafx.fxml;
     exports com.elcojo.gestorvuelos;
 }
